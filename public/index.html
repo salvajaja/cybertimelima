@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CyberTimeLima - Catálogo de relojes"
+    >
+
+    <title>CyberTimeLima | Catálogo de Relojes</title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <a
+                href="#inicio"
+                class="logo"
+            >
+                CyberTime<span>Lima</span>
+            </a>
+
+            <nav class="nav">
+
+                <a href="#inicio">
+                    Inicio
+                </a>
+
+                <a href="#catalogo">
+                    Catálogo
+                </a>
+
+                <a href="#nosotros">
+                    Nosotros
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
+
+            </nav>
+
+            <div class="admin-actions">
+
+                <span
+                    id="bienvenida"
+                    class="bienvenida hidden"
+                ></span>
+
+                <button
+                    id="loginButton"
+                    class="btn btn-outline"
+                    type="button"
+                >
+                    Administrador
+                </button>
+
+                <button
+                    id="adminButton"
+                    class="btn btn-primary hidden"
+                    type="button"
+                >
+                    Gestionar relojes
+                </button>
+
+                <button
+                    id="logoutButton"
+                    class="btn btn-outline hidden"
+                    type="button"
+                >
+                    Cerrar sesión
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section
+            id="inicio"
+            class="hero"
+        >
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <p class="eyebrow">
+                        CYBERTIMELIMA
+                    </p>
+
+                    <h1>
+                        El tiempo también
+                        <span>define tu estilo.</span>
+                    </h1>
+
+                    <p>
+                        Descubre nuestro catálogo de relojes
+                        seleccionados para quienes buscan
+                        diseño, personalidad y precisión.
+                    </p>
+
+                    <a
+                        href="#catalogo"
+                        class="btn btn-primary"
+                    >
+                        Ver catálogo
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATÁLOGO
+        ================================================== -->
+
+        <section
+            id="catalogo"
+            class="section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            COLECCIÓN
+                        </p>
+
+                        <h2>
+                            Nuestros relojes
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Explora nuestra selección.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     FILTROS
+                ================================================== -->
+
+                <div class="filters">
+
+                    <!-- BÚSQUEDA -->
+
+                    <div class="search-box">
+
+                        <input
+                            type="search"
+                            id="buscar"
+                            placeholder="Buscar reloj..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <!-- MARCA -->
+
+                    <select id="filtroMarca">
+
+                        <option value="">
+                            Todas las marcas
+                        </option>
+
+                    </select>
+
+
+                    <!-- =================================================
+                         CATEGORÍAS PREDEFINIDAS
+                    ================================================== -->
+
+                    <details
+                        class="filter-dropdown"
+                        id="categoriasDropdown"
+                    >
+
+                        <summary>
+
+                            <span>
+                                Categorías
+                            </span>
+
+                            <span class="dropdown-arrow">
+                                +
+                            </span>
+
+                        </summary>
+
+                        <div class="filter-dropdown-content">
+
+                            <select id="filtroCategoria">
+
+                                <option value="">
+                                    Todas las categorías
+                                </option>
+
+                                <option value="Clásico">
+                                    Clásico
+                                </option>
+
+                                <option value="Deportivo">
+                                    Deportivo
+                                </option>
+
+                                <option value="Lujo">
+                                    Lujo
+                                </option>
+
+                                <option value="Smartwatch">
+                                    Smartwatch
+                                </option>
+
+                                <option value="Vintage">
+                                    Vintage
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </details>
+
+
+                    <!-- ORDENAR -->
+
+                    <select id="ordenar">
+
+                        <option value="">
+                            Ordenar
+                        </option>
+
+                        <option value="recientes">
+                            Más recientes
+                        </option>
+
+                        <option value="nombre">
+                            Nombre
+                        </option>
+
+                        <option value="precio-asc">
+                            Precio menor
+                        </option>
+
+                        <option value="precio-desc">
+                            Precio mayor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- =================================================
+                     GRID DE RELOJES
+                ================================================== -->
+
+                <div
+                    id="relojesContainer"
+                    class="relojes-grid"
+                ></div>
+
+
+                <!-- =================================================
+                     SIN RESULTADOS
+                ================================================== -->
+
+                <div
+                    id="sinResultados"
+                    class="sin-resultados hidden"
+                >
+                    No se encontraron relojes.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NOSOTROS
+        ================================================== -->
+
+        <section
+            id="nosotros"
+            class="section section-dark"
+        >
+
+            <div class="container about">
+
+                <div>
+
+                    <p class="eyebrow">
+                        NOSOTROS
+                    </p>
+
+                    <h2>
+                        Una colección pensada
+                        para cada estilo.
+                    </h2>
+
+                </div>
+
+                <div>
+
+                    <p>
+                        CyberTimeLima es un catálogo digital
+                        dedicado a mostrar relojes y sus
+                        características de una manera sencilla,
+                        moderna y accesible.
+                    </p>
+
+                    <p>
+                        Explora los modelos disponibles y
+                        encuentra el reloj que mejor representa
+                        tu estilo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACTO
+        ================================================== -->
+
+        <section
+            id="contacto"
+            class="section"
+        >
+
+            <div class="container contact">
+
+                <div>
+
+                    <p class="eyebrow">
+                        CONTACTO
+                    </p>
+
+                    <h2>
+                        ¿Quieres más información?
+                    </h2>
+
+                    <p>
+                        Comunícate directamente con nuestro
+                        administrador mediante WhatsApp.
+                    </p>
+
+                </div>
+
+                <a
+                    id="whatsappButton"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    Contactar por WhatsApp
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL LOGIN
+    ====================================================== -->
+
+    <div
+        id="loginModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close="loginModal"
+        ></div>
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                data-close="loginModal"
+                type="button"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">
+                ACCESO
+            </p>
+
+            <h2>
+                Administrador
+            </h2>
+
+            <form id="loginForm">
+
+                <label for="loginEmail">
+                    Correo
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    required
+                    autocomplete="email"
+                    placeholder="Correo del administrador"
+                >
+
+                <label for="loginPassword">
+                    Contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    required
+                    autocomplete="current-password"
+                    placeholder="Contraseña"
+                >
+
+                <button
+                    type="submit"
+                    class="btn btn-primary btn-full"
+                >
+                    Ingresar
+                </button>
+
+                <p
+                    id="loginError"
+                    class="form-error"
+                ></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MODAL DETALLE
+    ====================================================== -->
+
+    <div
+        id="detailModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close="detailModal"
+        ></div>
+
+        <div class="modal-content modal-large">
+
+            <button
+                class="modal-close"
+                data-close="detailModal"
+                type="button"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
+
+            <div
+                id="detalleContenido"
+                class="detalle-contenido"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MODAL ADMINISTRACIÓN
+    ====================================================== -->
+
+    <div
+        id="adminModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close="adminModal"
+        ></div>
+
+        <div class="modal-content modal-large">
+
+            <button
+                class="modal-close"
+                data-close="adminModal"
+                type="button"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
+
+
+            <!-- =================================================
+                 ADMIN HEADER
+            ================================================== -->
+
+            <details
+                class="admin-section"
+                open
+            >
+
+                <summary class="admin-section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            ADMINISTRACIÓN
+                        </p>
+
+                        <h2>
+                            Gestionar relojes
+                        </h2>
+
+                    </div>
+
+                    <span class="admin-section-arrow">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <!-- =================================================
+                     CONTENIDO ADMIN
+                ================================================== -->
+
+                <div class="admin-section-content">
+
+                    <button
+                        id="nuevoRelojButton"
+                        class="btn btn-primary"
+                        type="button"
+                    >
+                        + Nuevo reloj
+                    </button>
+
+
+                    <div
+                        id="adminRelojes"
+                        class="admin-list"
+                    ></div>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MODAL AGREGAR / EDITAR RELOJ
+    ====================================================== -->
+
+    <div
+        id="relojFormModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close="relojFormModal"
+        ></div>
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                data-close="relojFormModal"
+                type="button"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">
+                ADMINISTRACIÓN
+            </p>
+
+            <h2 id="relojFormTitulo">
+                Agregar reloj
+            </h2>
+
+
+            <form id="relojForm">
+
+                <!-- ID OCULTO -->
+
+                <input
+                    type="hidden"
+                    id="relojId"
+                >
+
+
+                <!-- NOMBRE -->
+
+                <label for="relojNombre">
+                    Nombre
+                </label>
+
+                <input
+                    type="text"
+                    id="relojNombre"
+                    required
+                    placeholder="Ej. Classic Chronograph"
+                >
+
+
+                <!-- MARCA -->
+
+                <label for="relojMarca">
+                    Marca
+                </label>
+
+                <input
+                    type="text"
+                    id="relojMarca"
+                    required
+                    placeholder="Marca del reloj"
+                >
+
+
+                <!-- =================================================
+                     CATEGORÍA PREDEFINIDA
+                ================================================== -->
+
+                <label for="relojCategoria">
+                    Categoría
+                </label>
+
+                <select
+                    id="relojCategoria"
+                    required
+                >
+
+                    <option value="">
+                        Seleccionar categoría
+                    </option>
+
+                    <option value="Clásico">
+                        Clásico
+                    </option>
+
+                    <option value="Deportivo">
+                        Deportivo
+                    </option>
+
+                    <option value="Lujo">
+                        Lujo
+                    </option>
+
+                    <option value="Smartwatch">
+                        Smartwatch
+                    </option>
+
+                    <option value="Vintage">
+                        Vintage
+                    </option>
+
+                </select>
+
+
+                <!-- PRECIO -->
+
+                <label for="relojPrecio">
+                    Precio
+                </label>
+
+                <input
+                    type="number"
+                    id="relojPrecio"
+                    required
+                    min="0"
+                    step="0.01"
+                    placeholder="0.00"
+                >
+
+
+                <!-- STOCK -->
+
+                <label for="relojStock">
+                    Stock
+                </label>
+
+                <input
+                    type="number"
+                    id="relojStock"
+                    min="0"
+                    step="1"
+                    value="0"
+                >
+
+
+                <!-- DESCRIPCIÓN -->
+
+                <label for="relojDescripcion">
+                    Descripción
+                </label>
+
+                <textarea
+                    id="relojDescripcion"
+                    rows="5"
+                    placeholder="Descripción del reloj..."
+                ></textarea>
+
+
+                <!-- =================================================
+                     IMAGEN
+                ================================================== -->
+
+                <label for="relojImagen">
+                    Imagen del reloj
+                </label>
+
+                <div class="image-upload">
+
+                    <input
+                        type="file"
+                        id="relojImagen"
+                        accept="image/png,image/jpeg,image/webp"
+                    >
+
+                    <p class="image-upload-text">
+                        Selecciona una imagen desde tu celular
+                        o computadora.
+                    </p>
+
+                    <p class="image-upload-help">
+                        PNG, JPG, JPEG o WEBP · Máximo 5 MB
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     PREVISUALIZACIÓN
+                ================================================== -->
+
+                <div
+                    id="imagenPreviewContainer"
+                    class="image-preview-container hidden"
+                >
+
+                    <p>
+                        Vista previa
+                    </p>
+
+                    <img
+                        id="imagenPreview"
+                        src=""
+                        alt="Vista previa"
+                        decoding="async"
+                    >
+
+                </div>
+
+
+                <!-- IMAGEN ACTUAL -->
+
+                <p
+                    id="imagenActual"
+                    class="imagen-actual"
+                ></p>
+
+
+                <!-- ERROR DEL FORMULARIO -->
+
+                <p
+                    id="relojFormError"
+                    class="form-error"
+                ></p>
+
+
+                <!-- =================================================
+                     BOTONES
+                ================================================== -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        data-close="relojFormModal"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="guardarRelojButton"
+                    >
+                        Guardar reloj
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
