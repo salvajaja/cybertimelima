@@ -1092,3 +1092,76 @@ select:focus {
         animation-iteration-count: 1 !important;
     }
 }
+/* =========================================================
+   HEADER RESPONSIVE PARA CELULARES
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .header-content {
+        min-height: auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .admin-actions {
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    .admin-actions .btn {
+        min-height: 40px;
+        padding: 0 14px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .bienvenida {
+        font-size: 12px;
+        max-width: 130px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #loginButton {
+        display: inline-flex;
+    }
+
+    #adminButton,
+    #logoutButton {
+        display: inline-flex;
+    }
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .header-content {
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .admin-actions {
+        gap: 6px;
+    }
+
+    .admin-actions .btn {
+        min-height: 38px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+}
